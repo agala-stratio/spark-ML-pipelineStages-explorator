@@ -1,0 +1,30 @@
+{
+  "name" : "Bucketizer",
+  "className" : "org.apache.spark.ml.feature.Bucketizer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "handleInvalid",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "how to handle invalid entries. Options are skip (filter out rows with invalid values), error (throw an error), or keep (keep invalid values in a special additional bucket).",
+    "defaultValue" : "error"
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "splits",
+    "paramType" : "DoubleArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "Split points for mapping continuous features into buckets. With n+1 splits, there are n buckets. A bucket defined by splits x,y holds values in the range [x,y) except the last bucket, which also includes y. The splits should be of length >= 3 and strictly increasing. Values at -inf, inf must be explicitly provided to cover all Double values; otherwise, values outside the splits specified will be treated as errors.",
+    "defaultValue" : ""
+  } ]
+}

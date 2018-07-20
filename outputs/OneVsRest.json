@@ -1,0 +1,30 @@
+{
+  "name" : "OneVsRest",
+  "className" : "org.apache.spark.ml.classification.OneVsRest",
+  "stageType" : "classification",
+  "parameters" : [ {
+    "name" : "classifier",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "base binary classifier",
+    "defaultValue" : ""
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  } ]
+}

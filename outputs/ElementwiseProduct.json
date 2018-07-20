@@ -1,0 +1,24 @@
+{
+  "name" : "ElementwiseProduct",
+  "className" : "org.apache.spark.ml.feature.ElementwiseProduct",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "scalingVec",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "vector for hadamard product",
+    "defaultValue" : ""
+  } ]
+}

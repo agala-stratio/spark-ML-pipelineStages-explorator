@@ -1,0 +1,60 @@
+{
+  "name" : "NaiveBayes",
+  "className" : "org.apache.spark.ml.classification.NaiveBayes",
+  "stageType" : "classification",
+  "parameters" : [ {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "modelType",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The model type which is a string (case-sensitive). Supported options: multinomial (default) and bernoulli.",
+    "defaultValue" : "multinomial"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "probabilityCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "Column name for predicted class conditional probabilities. Note: Not all models output well-calibrated probability estimates! These probabilities should be treated as confidences, not precise probabilities",
+    "defaultValue" : "probability"
+  }, {
+    "name" : "rawPredictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "raw prediction (a.k.a. confidence) column name",
+    "defaultValue" : "rawPrediction"
+  }, {
+    "name" : "smoothing",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The smoothing parameter.",
+    "defaultValue" : "1.0"
+  }, {
+    "name" : "thresholds",
+    "paramType" : "DoubleArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "Thresholds in multi-class classification to adjust the probability of predicting each class. Array must have length equal to the number of classes, with values > 0 excepting that at most one value may be 0. The class with largest value p/t is predicted, where p is the original probability of that class and t is the class's threshold",
+    "defaultValue" : ""
+  }, {
+    "name" : "weightCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "weight column name. If this is not set or empty, we treat all instance weights as 1.0",
+    "defaultValue" : ""
+  } ]
+}

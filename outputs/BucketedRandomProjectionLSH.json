@@ -1,0 +1,36 @@
+{
+  "name" : "BucketedRandomProjectionLSH",
+  "className" : "org.apache.spark.ml.feature.BucketedRandomProjectionLSH",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "bucketLength",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the length of each hash bucket, a larger bucket lowers the false negative rate.",
+    "defaultValue" : ""
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "numHashTables",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number of hash tables, where increasing number of hash tables lowers the false negative rate, and decreasing it improves the running performance",
+    "defaultValue" : "1"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "772209414"
+  } ]
+}

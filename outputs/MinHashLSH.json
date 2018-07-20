@@ -1,0 +1,30 @@
+{
+  "name" : "MinHashLSH",
+  "className" : "org.apache.spark.ml.feature.MinHashLSH",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "numHashTables",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number of hash tables, where increasing number of hash tables lowers the false negative rate, and decreasing it improves the running performance",
+    "defaultValue" : "1"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "328749633"
+  } ]
+}

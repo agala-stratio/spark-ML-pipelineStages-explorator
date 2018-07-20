@@ -1,0 +1,30 @@
+{
+  "name" : "VectorSlicer",
+  "className" : "org.apache.spark.ml.feature.VectorSlicer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "indices",
+    "paramType" : "IntArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "An array of indices to select features from a vector column. There can be no overlap with names.",
+    "defaultValue" : "[I@2158339b"
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "names",
+    "paramType" : "StringArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "An array of feature names to select features from a vector column. There can be no overlap with indices.",
+    "defaultValue" : "[]"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

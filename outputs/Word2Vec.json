@@ -1,0 +1,66 @@
+{
+  "name" : "Word2Vec",
+  "className" : "org.apache.spark.ml.feature.Word2Vec",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "1"
+  }, {
+    "name" : "maxSentenceLength",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "Maximum length (in words) of each sentence in the input data. Any sentence longer than this threshold will be divided into chunks up to the size (> 0)",
+    "defaultValue" : "1000"
+  }, {
+    "name" : "minCount",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "the minimum number of times a token must appear to be included in the word2vec model's vocabulary (>= 0)",
+    "defaultValue" : "5"
+  }, {
+    "name" : "numPartitions",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number of partitions for sentences of words (> 0)",
+    "defaultValue" : "1"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "-1961189076"
+  }, {
+    "name" : "stepSize",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "Step size to be used for each iteration of optimization (> 0)",
+    "defaultValue" : "0.025"
+  }, {
+    "name" : "vectorSize",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "the dimension of codes after transforming from words (> 0)",
+    "defaultValue" : "100"
+  }, {
+    "name" : "windowSize",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "the window size (context words from [-window, window]) (> 0)",
+    "defaultValue" : "5"
+  } ]
+}

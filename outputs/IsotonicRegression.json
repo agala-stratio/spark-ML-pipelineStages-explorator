@@ -1,0 +1,42 @@
+{
+  "name" : "IsotonicRegression",
+  "className" : "org.apache.spark.ml.regression.IsotonicRegression",
+  "stageType" : "regression",
+  "parameters" : [ {
+    "name" : "featureIndex",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "The index of the feature if featuresCol is a vector column, no effect otherwise (>= 0)",
+    "defaultValue" : "0"
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "isotonic",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether the output sequence should be isotonic/increasing (true) or antitonic/decreasing (false)",
+    "defaultValue" : "true"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "weightCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "weight column name. If this is not set or empty, we treat all instance weights as 1.0",
+    "defaultValue" : ""
+  } ]
+}

@@ -1,0 +1,42 @@
+{
+  "name" : "RegexTokenizer",
+  "className" : "org.apache.spark.ml.feature.RegexTokenizer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "gaps",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "Set regex to match gaps or tokens",
+    "defaultValue" : "true"
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "minTokenLength",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "minimum token length (>= 0)",
+    "defaultValue" : "1"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "pattern",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "regex pattern used for tokenizing",
+    "defaultValue" : "\\s+"
+  }, {
+    "name" : "toLowercase",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to convert all characters to lowercase before tokenizing.",
+    "defaultValue" : "true"
+  } ]
+}

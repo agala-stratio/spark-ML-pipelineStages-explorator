@@ -1,0 +1,24 @@
+{
+  "name" : "StringIndexer",
+  "className" : "org.apache.spark.ml.feature.StringIndexer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "handleInvalid",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "how to handle invalid data (unseen labels or NULL values). Options are 'skip' (filter out rows with invalid data), error (throw an error), or 'keep' (put invalid data in a special additional bucket, at index numLabels).",
+    "defaultValue" : "error"
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

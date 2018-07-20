@@ -1,0 +1,24 @@
+{
+  "name" : "Binarizer",
+  "className" : "org.apache.spark.ml.feature.Binarizer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "threshold",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "threshold used to binarize continuous features",
+    "defaultValue" : "0.0"
+  } ]
+}

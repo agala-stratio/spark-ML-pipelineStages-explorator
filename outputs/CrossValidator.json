@@ -1,0 +1,36 @@
+{
+  "name" : "CrossValidator",
+  "className" : "org.apache.spark.ml.tuning.CrossValidator",
+  "stageType" : "tuning",
+  "parameters" : [ {
+    "name" : "estimator",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "estimator for selection",
+    "defaultValue" : ""
+  }, {
+    "name" : "estimatorParamMaps",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "param maps for the estimator",
+    "defaultValue" : ""
+  }, {
+    "name" : "evaluator",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "evaluator used to select hyper-parameters that maximize the validated metric",
+    "defaultValue" : ""
+  }, {
+    "name" : "numFolds",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number of folds for cross validation (>= 2)",
+    "defaultValue" : "3"
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "-1191137437"
+  } ]
+}

@@ -1,0 +1,12 @@
+{
+  "name" : "SQLTransformer",
+  "className" : "org.apache.spark.ml.feature.SQLTransformer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "statement",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "SQL statement",
+    "defaultValue" : ""
+  } ]
+}

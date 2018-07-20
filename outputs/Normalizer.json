@@ -1,0 +1,24 @@
+{
+  "name" : "Normalizer",
+  "className" : "org.apache.spark.ml.feature.Normalizer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "p",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the p norm value",
+    "defaultValue" : "2.0"
+  } ]
+}

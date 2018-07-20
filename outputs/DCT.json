@@ -1,0 +1,24 @@
+{
+  "name" : "DCT",
+  "className" : "org.apache.spark.ml.feature.DCT",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "inverse",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "Set transformer to perform inverse DCT",
+    "defaultValue" : "false"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

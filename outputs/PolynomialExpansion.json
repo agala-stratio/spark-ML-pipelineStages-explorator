@@ -1,0 +1,24 @@
+{
+  "name" : "PolynomialExpansion",
+  "className" : "org.apache.spark.ml.feature.PolynomialExpansion",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "degree",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "the polynomial degree to expand (>= 1)",
+    "defaultValue" : "2"
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

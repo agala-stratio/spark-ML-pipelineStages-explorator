@@ -1,0 +1,72 @@
+{
+  "name" : "MultilayerPerceptronClassifier",
+  "className" : "org.apache.spark.ml.classification.MultilayerPerceptronClassifier",
+  "stageType" : "classification",
+  "parameters" : [ {
+    "name" : "blockSize",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "Block size for stacking input data in matrices. Data is stacked within partitions. If block size is more than remaining data in a partition then it is adjusted to the size of this data. Recommended size is between 10 and 1000",
+    "defaultValue" : "128"
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "initialWeights",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The initial weights of the model",
+    "defaultValue" : ""
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "layers",
+    "paramType" : "IntArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "Sizes of layers from input layer to output layer. E.g., Array(780, 100, 10) means 780 inputs, one hidden layer with 100 neurons and output layer of 10 neurons.",
+    "defaultValue" : ""
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "100"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "-763139545"
+  }, {
+    "name" : "solver",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The solver algorithm for optimization. Supported options: l-bfgs, gd. (Default l-bfgs)",
+    "defaultValue" : "l-bfgs"
+  }, {
+    "name" : "stepSize",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "Step size to be used for each iteration of optimization (> 0)",
+    "defaultValue" : "0.03"
+  }, {
+    "name" : "tol",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the convergence tolerance for iterative algorithms (>= 0)",
+    "defaultValue" : "1.0E-6"
+  } ]
+}

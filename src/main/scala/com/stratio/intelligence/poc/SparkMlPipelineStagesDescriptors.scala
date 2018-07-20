@@ -2,23 +2,19 @@ package com.stratio.intelligence.poc
 
 import java.io.File
 
-import org.apache.spark.ml.Estimator
-import org.clapper.classutil.{ClassFinder, ClassInfo}
 import org.apache.spark.ml.param.{Param, ParamMap, Params, StringArrayParam}
-import org.json4s.JsonDSL._
-import org.json4s.jackson.JsonMethods._
+import org.clapper.classutil.{ClassFinder, ClassInfo}
 import org.json4s._
-import org.json4s.jackson.Serialization
-import org.json4s.jackson.Serialization.write
+import org.json4s.jackson.Serialization.writePretty
 
 import scala.util.{Success, Try}
 
 // => Pipeline stages descriptors classes
-case class PipelineStageParam(name:String, paramType:String, paramCategory:String, description:String, defaulValue:String)
+case class PipelineStageParam(name:String, paramType:String, paramCategory:String, description:String, defaultValue:String)
 case class PipelineStageDescriptor(name:String, className:String, stageType:String, parameters:Seq[PipelineStageParam])
 
 
-object SparkMlInfo extends App{
+object SparkMlPipelineStagesDescriptors extends App{
 
   // => Getting current classpath
   val cl = ClassLoader.getSystemClassLoader
@@ -73,7 +69,7 @@ object SparkMlInfo extends App{
                                                   description = p.doc,
                                                   paramType = p.getClass.getSimpleName,
                                                   paramCategory = getParameterCategory(e,p),
-                                                  defaulValue = getDefaultValue(e,p)
+                                                  defaultValue = getDefaultValue(e,p)
                               )
                             )
     )
@@ -81,7 +77,12 @@ object SparkMlInfo extends App{
 
   implicit val formats = DefaultFormats
 
-  val pipelineStagesDescriptorsJson: Seq[String] = pipelineStagesDescriptors.map(d => write(d))
+  val pipelineStagesDescriptorsJson = pipelineStagesDescriptors.map(d => (d.name, writePretty(d)))
+
+
+  // Saving jsons
+  pipelineStagesDescriptorsJson.foreach(
+    x => scala.tools.nsc.io.File(s"outputs/${x._1}.json").writeAll(x._2))
 
 
   def getDefaultValue(e:Any, p:Param[_]):String ={

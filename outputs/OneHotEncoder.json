@@ -1,0 +1,24 @@
+{
+  "name" : "OneHotEncoder",
+  "className" : "org.apache.spark.ml.feature.OneHotEncoder",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "dropLast",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to drop the last category",
+    "defaultValue" : "true"
+  }, {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

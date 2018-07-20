@@ -1,0 +1,30 @@
+{
+  "name" : "RFormula",
+  "className" : "org.apache.spark.ml.feature.RFormula",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "forceIndexLabel",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "Force to index label whether it is numeric or string",
+    "defaultValue" : "false"
+  }, {
+    "name" : "formula",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "R model formula",
+    "defaultValue" : ""
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  } ]
+}

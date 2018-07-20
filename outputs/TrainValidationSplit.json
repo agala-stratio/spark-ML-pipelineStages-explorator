@@ -1,0 +1,36 @@
+{
+  "name" : "TrainValidationSplit",
+  "className" : "org.apache.spark.ml.tuning.TrainValidationSplit",
+  "stageType" : "tuning",
+  "parameters" : [ {
+    "name" : "estimator",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "estimator for selection",
+    "defaultValue" : ""
+  }, {
+    "name" : "estimatorParamMaps",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "param maps for the estimator",
+    "defaultValue" : ""
+  }, {
+    "name" : "evaluator",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "evaluator used to select hyper-parameters that maximize the validated metric",
+    "defaultValue" : ""
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "-1772833110"
+  }, {
+    "name" : "trainRatio",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "ratio between training set and validation set (>= 0 && <= 1)",
+    "defaultValue" : "0.75"
+  } ]
+}

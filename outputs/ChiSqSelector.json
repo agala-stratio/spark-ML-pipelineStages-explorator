@@ -1,0 +1,60 @@
+{
+  "name" : "ChiSqSelector",
+  "className" : "org.apache.spark.ml.feature.ChiSqSelector",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "fdr",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The upper bound of the expected false discovery rate.",
+    "defaultValue" : "0.05"
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "fpr",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The highest p-value for features to be kept.",
+    "defaultValue" : "0.05"
+  }, {
+    "name" : "fwe",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The upper bound of the expected family-wise error rate.",
+    "defaultValue" : "0.05"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "numTopFeatures",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "Number of features that selector will select, ordered by ascending p-value. If the number of features is < numTopFeatures, then this will select all features.",
+    "defaultValue" : "50"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "percentile",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "Percentile of features that selector will select, ordered by ascending p-value.",
+    "defaultValue" : "0.1"
+  }, {
+    "name" : "selectorType",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The selector type of the ChisqSelector. Supported options: numTopFeatures, percentile, fpr, fdr, fwe",
+    "defaultValue" : "numTopFeatures"
+  } ]
+}

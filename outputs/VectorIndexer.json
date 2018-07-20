@@ -1,0 +1,24 @@
+{
+  "name" : "VectorIndexer",
+  "className" : "org.apache.spark.ml.feature.VectorIndexer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "maxCategories",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "Threshold for the number of values a categorical feature can take (>= 2). If a feature is found to have > maxCategories values, then it is declared continuous.",
+    "defaultValue" : "20"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

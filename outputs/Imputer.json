@@ -1,0 +1,30 @@
+{
+  "name" : "Imputer",
+  "className" : "org.apache.spark.ml.feature.Imputer",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCols",
+    "paramType" : "StringArrayParam",
+    "paramCategory" : "input",
+    "description" : "input column names",
+    "defaultValue" : ""
+  }, {
+    "name" : "missingValue",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The placeholder for the missing values. All occurrences of missingValue will be imputed",
+    "defaultValue" : "NaN"
+  }, {
+    "name" : "outputCols",
+    "paramType" : "StringArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "output column names",
+    "defaultValue" : ""
+  }, {
+    "name" : "strategy",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "strategy for imputation. If mean, then replace missing values using the mean value of the feature. If median, then replace missing values using the median value of the feature.",
+    "defaultValue" : "mean"
+  } ]
+}

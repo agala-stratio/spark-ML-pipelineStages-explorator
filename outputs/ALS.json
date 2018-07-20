@@ -1,0 +1,108 @@
+{
+  "name" : "ALS",
+  "className" : "org.apache.spark.ml.recommendation.ALS",
+  "stageType" : "recommendation",
+  "parameters" : [ {
+    "name" : "alpha",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "alpha for implicit preference",
+    "defaultValue" : "1.0"
+  }, {
+    "name" : "checkpointInterval",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "set checkpoint interval (>= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations",
+    "defaultValue" : "10"
+  }, {
+    "name" : "coldStartStrategy",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "strategy for dealing with unknown or new users/items at prediction time. This may be useful in cross-validation or production scenarios, for handling user/item ids the model has not seen in the training data. Supported values: nan,drop.",
+    "defaultValue" : "nan"
+  }, {
+    "name" : "finalStorageLevel",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "StorageLevel for ALS model factors.",
+    "defaultValue" : "MEMORY_AND_DISK"
+  }, {
+    "name" : "implicitPrefs",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to use implicit preference",
+    "defaultValue" : "false"
+  }, {
+    "name" : "intermediateStorageLevel",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "StorageLevel for intermediate datasets. Cannot be 'NONE'.",
+    "defaultValue" : "MEMORY_AND_DISK"
+  }, {
+    "name" : "itemCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "column name for item ids. Ids must be within the integer value range.",
+    "defaultValue" : "item"
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "10"
+  }, {
+    "name" : "nonnegative",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to use nonnegative constraint for least squares",
+    "defaultValue" : "false"
+  }, {
+    "name" : "numItemBlocks",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number of item blocks",
+    "defaultValue" : "10"
+  }, {
+    "name" : "numUserBlocks",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number of user blocks",
+    "defaultValue" : "10"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "rank",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "rank of the factorization",
+    "defaultValue" : "10"
+  }, {
+    "name" : "ratingCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "column name for ratings",
+    "defaultValue" : "rating"
+  }, {
+    "name" : "regParam",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "regularization parameter (>= 0)",
+    "defaultValue" : "0.1"
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "1994790107"
+  }, {
+    "name" : "userCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "column name for user ids. Ids must be within the integer value range.",
+    "defaultValue" : "user"
+  } ]
+}

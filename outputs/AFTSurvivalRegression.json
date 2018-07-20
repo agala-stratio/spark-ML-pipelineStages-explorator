@@ -1,0 +1,66 @@
+{
+  "name" : "AFTSurvivalRegression",
+  "className" : "org.apache.spark.ml.regression.AFTSurvivalRegression",
+  "stageType" : "regression",
+  "parameters" : [ {
+    "name" : "aggregationDepth",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "suggested depth for treeAggregate (>= 2)",
+    "defaultValue" : "2"
+  }, {
+    "name" : "censorCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "censor column name",
+    "defaultValue" : "censor"
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "fitIntercept",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to fit an intercept term",
+    "defaultValue" : "true"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "100"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "quantileProbabilities",
+    "paramType" : "DoubleArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "quantile probabilities array",
+    "defaultValue" : "[D@1c29eff1"
+  }, {
+    "name" : "quantilesCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "quantiles column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "tol",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the convergence tolerance for iterative algorithms (>= 0)",
+    "defaultValue" : "1.0E-6"
+  } ]
+}

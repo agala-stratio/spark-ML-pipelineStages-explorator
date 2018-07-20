@@ -1,0 +1,24 @@
+{
+  "name" : "PCA",
+  "className" : "org.apache.spark.ml.feature.PCA",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "k",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "the number of principal components (> 0)",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

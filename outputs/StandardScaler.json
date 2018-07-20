@@ -1,0 +1,30 @@
+{
+  "name" : "StandardScaler",
+  "className" : "org.apache.spark.ml.feature.StandardScaler",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "withMean",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "Whether to center data with mean",
+    "defaultValue" : "false"
+  }, {
+    "name" : "withStd",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "Whether to scale the data to unit standard deviation",
+    "defaultValue" : "true"
+  } ]
+}

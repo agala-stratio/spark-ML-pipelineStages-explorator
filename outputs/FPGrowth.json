@@ -1,0 +1,36 @@
+{
+  "name" : "FPGrowth",
+  "className" : "org.apache.spark.ml.fpm.FPGrowth",
+  "stageType" : "fpm",
+  "parameters" : [ {
+    "name" : "itemsCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "items column name",
+    "defaultValue" : "items"
+  }, {
+    "name" : "minConfidence",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "minimal confidence for generating Association Rule",
+    "defaultValue" : "0.8"
+  }, {
+    "name" : "minSupport",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the minimal support level of a frequent pattern",
+    "defaultValue" : "0.3"
+  }, {
+    "name" : "numPartitions",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "Number of partitions used by parallel FP-growth",
+    "defaultValue" : ""
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  } ]
+}

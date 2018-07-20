@@ -1,0 +1,54 @@
+{
+  "name" : "KMeans",
+  "className" : "org.apache.spark.ml.clustering.KMeans",
+  "stageType" : "clustering",
+  "parameters" : [ {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "initMode",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The initialization algorithm. Supported options: 'random' and 'k-means||'.",
+    "defaultValue" : "k-means||"
+  }, {
+    "name" : "initSteps",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "The number of steps for k-means|| initialization mode. Must be > 0.",
+    "defaultValue" : "2"
+  }, {
+    "name" : "k",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "The number of clusters to create. Must be > 1.",
+    "defaultValue" : "2"
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "20"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "-1689246527"
+  }, {
+    "name" : "tol",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the convergence tolerance for iterative algorithms (>= 0)",
+    "defaultValue" : "1.0E-4"
+  } ]
+}

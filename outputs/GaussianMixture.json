@@ -1,0 +1,48 @@
+{
+  "name" : "GaussianMixture",
+  "className" : "org.apache.spark.ml.clustering.GaussianMixture",
+  "stageType" : "clustering",
+  "parameters" : [ {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "k",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "Number of independent Gaussians in the mixture model. Must be > 1.",
+    "defaultValue" : "2"
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "100"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "probabilityCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "Column name for predicted class conditional probabilities. Note: Not all models output well-calibrated probability estimates! These probabilities should be treated as confidences, not precise probabilities",
+    "defaultValue" : "probability"
+  }, {
+    "name" : "seed",
+    "paramType" : "LongParam",
+    "paramCategory" : "parameter",
+    "description" : "random seed",
+    "defaultValue" : "538009335"
+  }, {
+    "name" : "tol",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the convergence tolerance for iterative algorithms (>= 0)",
+    "defaultValue" : "0.01"
+  } ]
+}

@@ -1,0 +1,24 @@
+{
+  "name" : "IDF",
+  "className" : "org.apache.spark.ml.feature.IDF",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "minDocFreq",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "minimum number of documents in which a term should appear for filtering (>= 0)",
+    "defaultValue" : "0"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

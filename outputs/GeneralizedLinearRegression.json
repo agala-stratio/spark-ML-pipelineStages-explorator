@@ -1,0 +1,90 @@
+{
+  "name" : "GeneralizedLinearRegression",
+  "className" : "org.apache.spark.ml.regression.GeneralizedLinearRegression",
+  "stageType" : "regression",
+  "parameters" : [ {
+    "name" : "family",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The name of family which is a description of the error distribution to be used in the model. Supported options: binomial, gamma, gaussian, poisson, tweedie.",
+    "defaultValue" : "gaussian"
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "fitIntercept",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to fit an intercept term",
+    "defaultValue" : "true"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "link",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "The name of link function which provides the relationship between the linear predictor and the mean of the distribution function. Supported options: cloglog, probit, logit, inverse, sqrt, identity, log",
+    "defaultValue" : ""
+  }, {
+    "name" : "linkPower",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The index in the power link function. Only applicable to the Tweedie family.",
+    "defaultValue" : ""
+  }, {
+    "name" : "linkPredictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "link prediction (linear predictor) column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "25"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "regParam",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "regularization parameter (>= 0)",
+    "defaultValue" : "0.0"
+  }, {
+    "name" : "solver",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "the solver algorithm for optimization. If this is not set or empty, default value is 'auto'",
+    "defaultValue" : "irls"
+  }, {
+    "name" : "tol",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the convergence tolerance for iterative algorithms (>= 0)",
+    "defaultValue" : "1.0E-6"
+  }, {
+    "name" : "variancePower",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "The power in the variance function of the Tweedie distribution which characterizes the relationship between the variance and mean of the distribution. Only applicable to the Tweedie family. Supported values: 0 and [1, Inf).",
+    "defaultValue" : "0.0"
+  }, {
+    "name" : "weightCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "weight column name. If this is not set or empty, we treat all instance weights as 1.0",
+    "defaultValue" : ""
+  } ]
+}

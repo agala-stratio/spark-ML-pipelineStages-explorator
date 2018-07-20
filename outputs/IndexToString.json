@@ -1,0 +1,24 @@
+{
+  "name" : "IndexToString",
+  "className" : "org.apache.spark.ml.feature.IndexToString",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "labels",
+    "paramType" : "StringArrayParam",
+    "paramCategory" : "parameter",
+    "description" : "Optional array of labels specifying index-string mapping. If not provided or if empty, then metadata from inputCol is used instead.",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

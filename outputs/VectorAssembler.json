@@ -1,0 +1,18 @@
+{
+  "name" : "VectorAssembler",
+  "className" : "org.apache.spark.ml.feature.VectorAssembler",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCols",
+    "paramType" : "StringArrayParam",
+    "paramCategory" : "input",
+    "description" : "input column names",
+    "defaultValue" : ""
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

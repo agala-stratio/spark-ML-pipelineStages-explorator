@@ -1,0 +1,24 @@
+{
+  "name" : "NGram",
+  "className" : "org.apache.spark.ml.feature.NGram",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "n",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "number elements per n-gram (>=1)",
+    "defaultValue" : "2"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

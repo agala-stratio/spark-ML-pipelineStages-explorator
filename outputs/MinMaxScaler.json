@@ -1,0 +1,30 @@
+{
+  "name" : "MinMaxScaler",
+  "className" : "org.apache.spark.ml.feature.MinMaxScaler",
+  "stageType" : "feature",
+  "parameters" : [ {
+    "name" : "inputCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "input column name",
+    "defaultValue" : ""
+  }, {
+    "name" : "max",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "upper bound of the output feature range",
+    "defaultValue" : "1.0"
+  }, {
+    "name" : "min",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "lower bound of the output feature range",
+    "defaultValue" : "0.0"
+  }, {
+    "name" : "outputCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "output column name",
+    "defaultValue" : ""
+  } ]
+}

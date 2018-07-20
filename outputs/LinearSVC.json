@@ -1,0 +1,78 @@
+{
+  "name" : "LinearSVC",
+  "className" : "org.apache.spark.ml.classification.LinearSVC",
+  "stageType" : "classification",
+  "parameters" : [ {
+    "name" : "aggregationDepth",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "suggested depth for treeAggregate (>= 2)",
+    "defaultValue" : "2"
+  }, {
+    "name" : "featuresCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "features column name",
+    "defaultValue" : "features"
+  }, {
+    "name" : "fitIntercept",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to fit an intercept term",
+    "defaultValue" : "true"
+  }, {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label"
+  }, {
+    "name" : "maxIter",
+    "paramType" : "IntParam",
+    "paramCategory" : "parameter",
+    "description" : "maximum number of iterations (>= 0)",
+    "defaultValue" : "100"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction"
+  }, {
+    "name" : "rawPredictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "raw prediction (a.k.a. confidence) column name",
+    "defaultValue" : "rawPrediction"
+  }, {
+    "name" : "regParam",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "regularization parameter (>= 0)",
+    "defaultValue" : "0.0"
+  }, {
+    "name" : "standardization",
+    "paramType" : "BooleanParam",
+    "paramCategory" : "parameter",
+    "description" : "whether to standardize the training features before fitting the model",
+    "defaultValue" : "true"
+  }, {
+    "name" : "threshold",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "threshold in binary classification prediction applied to rawPrediction",
+    "defaultValue" : "0.0"
+  }, {
+    "name" : "tol",
+    "paramType" : "DoubleParam",
+    "paramCategory" : "parameter",
+    "description" : "the convergence tolerance for iterative algorithms (>= 0)",
+    "defaultValue" : "1.0E-6"
+  }, {
+    "name" : "weightCol",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "weight column name. If this is not set or empty, we treat all instance weights as 1.0",
+    "defaultValue" : ""
+  } ]
+}
