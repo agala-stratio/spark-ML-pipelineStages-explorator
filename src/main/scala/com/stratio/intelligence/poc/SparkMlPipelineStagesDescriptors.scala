@@ -10,7 +10,7 @@ import org.json4s.jackson.Serialization.writePretty
 import scala.util.{Success, Try}
 
 // => Pipeline stages descriptors classes
-case class PipelineStageParam(name:String, paramType:String, paramCategory:String, description:String, defaultValue:String)
+case class PipelineStageParam(name:String, paramType:String, paramCategory:String, description:String, defaultValue:String,restriction:String)
 case class PipelineStageDescriptor(name:String, className:String, stageType:String, parameters:Seq[PipelineStageParam])
 
 
@@ -70,6 +70,7 @@ object SparkMlPipelineStagesDescriptors extends App{
                                                   paramType = p.getClass.getSimpleName,
                                                   paramCategory = getParameterCategory(e,p),
                                                   defaultValue = getDefaultValue(e,p)
+                                                  restriction = getParameterRestriction(p)
                               )
                             )
     )
@@ -124,6 +125,30 @@ object SparkMlPipelineStagesDescriptors extends App{
       case _ => "parameter"
     }
   }
+
+  def getParameterRestriction(p:Param[_]):String ={
+
+    val validatorClass = p.isValid.getClass().getName
+    if( validatorClass.startsWith("org.apache.spark.ml.param.ParamValidators")){
+      validatorClass match {
+        case s if s.contains("inArray") => {
+          val field = p.isValid.getClass.getDeclaredField("allowed$2")
+          field.setAccessible(true)
+          field.get(p.isValid).asInstanceOf[Array[String]].mkString(",")
+        }
+        case s if s.contains("gt") => ""
+        case s if s.contains("gtEq") => ""
+        case s if s.contains("inRange") => ""
+        case s if s.contains("lt") => ""
+        case s if s.contains("ltEq") => ""
+        case s if s.contains("arrayLengthGt") => ""
+
+        case _ => "_"
+      }
+    }else ""
+  }
+
+  def getDeclaredFieldValue(field:String, valueClass:T)
 
 
   print("a")
