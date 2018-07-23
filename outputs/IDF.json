@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "minDocFreq",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "minimum number of documents in which a term should appear for filtering (>= 0)",
-    "defaultValue" : "0"
+    "defaultValue" : "0",
+    "restriction" : ">0.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

@@ -7,78 +7,91 @@
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "If false, the algorithm will pass trees to executors to match instances with nodes. If true, the algorithm will cache node IDs for each instance. Caching can speed up training of deeper trees.",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "checkpointInterval",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "set checkpoint interval (>= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ""
   }, {
     "name" : "featuresCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "impurity",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "Criterion used for information gain calculation (case-insensitive). Supported options: variance",
-    "defaultValue" : "variance"
+    "defaultValue" : "variance",
+    "restriction" : ""
   }, {
     "name" : "labelCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "label column name",
-    "defaultValue" : "label"
+    "defaultValue" : "label",
+    "restriction" : ""
   }, {
     "name" : "maxBins",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Max number of bins for discretizing continuous features.  Must be >=2 and >= number of categories for any categorical feature.",
-    "defaultValue" : "32"
+    "defaultValue" : "32",
+    "restriction" : ">2.0"
   }, {
     "name" : "maxDepth",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Maximum depth of the tree. (>= 0) E.g., depth 0 means 1 leaf node; depth 1 means 1 internal node + 2 leaf nodes.",
-    "defaultValue" : "5"
+    "defaultValue" : "5",
+    "restriction" : ">0.0"
   }, {
     "name" : "maxMemoryInMB",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Maximum memory in MB allocated to histogram aggregation.",
-    "defaultValue" : "256"
+    "defaultValue" : "256",
+    "restriction" : ">0.0"
   }, {
     "name" : "minInfoGain",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Minimum information gain for a split to be considered at a tree node.",
-    "defaultValue" : "0.0"
+    "defaultValue" : "0.0",
+    "restriction" : ">0.0"
   }, {
     "name" : "minInstancesPerNode",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Minimum number of instances each child must have after split.  If a split causes the left or right child to have fewer than minInstancesPerNode, the split will be discarded as invalid. Should be >= 1.",
-    "defaultValue" : "1"
+    "defaultValue" : "1",
+    "restriction" : ">1.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "926680331"
+    "defaultValue" : "926680331",
+    "restriction" : ""
   }, {
     "name" : "varianceCol",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "Column name for the biased sample variance of prediction",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

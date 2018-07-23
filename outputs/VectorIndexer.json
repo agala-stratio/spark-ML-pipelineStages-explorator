@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "maxCategories",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Threshold for the number of values a categorical feature can take (>= 2). If a feature is found to have > maxCategories values, then it is declared continuous.",
-    "defaultValue" : "20"
+    "defaultValue" : "20",
+    "restriction" : ">2.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

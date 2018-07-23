@@ -7,36 +7,42 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "k",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "The desired number of leaf clusters. Must be > 1.",
-    "defaultValue" : "4"
+    "defaultValue" : "4",
+    "restriction" : ">1.0"
   }, {
     "name" : "maxIter",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "maximum number of iterations (>= 0)",
-    "defaultValue" : "20"
+    "defaultValue" : "20",
+    "restriction" : ">0.0"
   }, {
     "name" : "minDivisibleClusterSize",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "The minimum number of points (if >= 1.0) or the minimum proportion of points (if < 1.0) of a divisible cluster.",
-    "defaultValue" : "1.0"
+    "defaultValue" : "1.0",
+    "restriction" : ">0.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "566573821"
+    "defaultValue" : "566573821",
+    "restriction" : ""
   } ]
 }

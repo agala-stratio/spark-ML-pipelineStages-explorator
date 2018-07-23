@@ -7,24 +7,28 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "withMean",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "Whether to center data with mean",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "withStd",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "Whether to scale the data to unit standard deviation",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   } ]
 }

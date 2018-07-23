@@ -7,66 +7,77 @@
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Block size for stacking input data in matrices. Data is stacked within partitions. If block size is more than remaining data in a partition then it is adjusted to the size of this data. Recommended size is between 10 and 1000",
-    "defaultValue" : "128"
+    "defaultValue" : "128",
+    "restriction" : ">0.0"
   }, {
     "name" : "featuresCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "initialWeights",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "The initial weights of the model",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "labelCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "label column name",
-    "defaultValue" : "label"
+    "defaultValue" : "label",
+    "restriction" : ""
   }, {
     "name" : "layers",
     "paramType" : "IntArrayParam",
     "paramCategory" : "parameter",
     "description" : "Sizes of layers from input layer to output layer. E.g., Array(780, 100, 10) means 780 inputs, one hidden layer with 100 neurons and output layer of 10 neurons.",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "maxIter",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "maximum number of iterations (>= 0)",
-    "defaultValue" : "100"
+    "defaultValue" : "100",
+    "restriction" : ">0.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "-763139545"
+    "defaultValue" : "-763139545",
+    "restriction" : ""
   }, {
     "name" : "solver",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "The solver algorithm for optimization. Supported options: l-bfgs, gd. (Default l-bfgs)",
-    "defaultValue" : "l-bfgs"
+    "defaultValue" : "l-bfgs",
+    "restriction" : "in [l-bfgs,gd]"
   }, {
     "name" : "stepSize",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Step size to be used for each iteration of optimization (> 0)",
-    "defaultValue" : "0.03"
+    "defaultValue" : "0.03",
+    "restriction" : ">0.0"
   }, {
     "name" : "tol",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "the convergence tolerance for iterative algorithms (>= 0)",
-    "defaultValue" : "1.0E-6"
+    "defaultValue" : "1.0E-6",
+    "restriction" : ">0.0"
   } ]
 }

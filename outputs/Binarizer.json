@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "threshold",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "threshold used to binarize continuous features",
-    "defaultValue" : "0.0"
+    "defaultValue" : "0.0",
+    "restriction" : ""
   } ]
 }

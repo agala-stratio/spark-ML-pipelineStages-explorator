@@ -7,36 +7,42 @@
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "Set regex to match gaps or tokens",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   }, {
     "name" : "inputCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "minTokenLength",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "minimum token length (>= 0)",
-    "defaultValue" : "1"
+    "defaultValue" : "1",
+    "restriction" : ">0.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "pattern",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "regex pattern used for tokenizing",
-    "defaultValue" : "\\s+"
+    "defaultValue" : "\\s+",
+    "restriction" : ""
   }, {
     "name" : "toLowercase",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "whether to convert all characters to lowercase before tokenizing.",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   } ]
 }

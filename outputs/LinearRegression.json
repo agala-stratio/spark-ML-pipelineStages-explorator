@@ -7,72 +7,84 @@
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "suggested depth for treeAggregate (>= 2)",
-    "defaultValue" : "2"
+    "defaultValue" : "2",
+    "restriction" : ">2.0"
   }, {
     "name" : "elasticNetParam",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "the ElasticNet mixing parameter, in range [0, 1]. For alpha = 0, the penalty is an L2 penalty. For alpha = 1, it is an L1 penalty",
-    "defaultValue" : "0.0"
+    "defaultValue" : "0.0",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "featuresCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "fitIntercept",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "whether to fit an intercept term",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   }, {
     "name" : "labelCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "label column name",
-    "defaultValue" : "label"
+    "defaultValue" : "label",
+    "restriction" : ""
   }, {
     "name" : "maxIter",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "maximum number of iterations (>= 0)",
-    "defaultValue" : "100"
+    "defaultValue" : "100",
+    "restriction" : ">0.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   }, {
     "name" : "regParam",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "regularization parameter (>= 0)",
-    "defaultValue" : "0.0"
+    "defaultValue" : "0.0",
+    "restriction" : ">0.0"
   }, {
     "name" : "solver",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "the solver algorithm for optimization. If this is not set or empty, default value is 'auto'",
-    "defaultValue" : "auto"
+    "defaultValue" : "auto",
+    "restriction" : ""
   }, {
     "name" : "standardization",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "whether to standardize the training features before fitting the model",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   }, {
     "name" : "tol",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "the convergence tolerance for iterative algorithms (>= 0)",
-    "defaultValue" : "1.0E-6"
+    "defaultValue" : "1.0E-6",
+    "restriction" : ">0.0"
   }, {
     "name" : "weightCol",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "weight column name. If this is not set or empty, we treat all instance weights as 1.0",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

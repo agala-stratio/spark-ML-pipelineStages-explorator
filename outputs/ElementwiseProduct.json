@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "scalingVec",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "vector for hadamard product",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

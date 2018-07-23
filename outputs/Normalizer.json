@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "p",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "the p norm value",
-    "defaultValue" : "2.0"
+    "defaultValue" : "2.0",
+    "restriction" : ">1.0"
   } ]
 }

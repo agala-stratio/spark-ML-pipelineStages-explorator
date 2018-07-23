@@ -7,24 +7,28 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "max",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "upper bound of the output feature range",
-    "defaultValue" : "1.0"
+    "defaultValue" : "1.0",
+    "restriction" : ""
   }, {
     "name" : "min",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "lower bound of the output feature range",
-    "defaultValue" : "0.0"
+    "defaultValue" : "0.0",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

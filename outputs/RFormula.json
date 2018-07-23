@@ -7,24 +7,28 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "forceIndexLabel",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "Force to index label whether it is numeric or string",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "formula",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "R model formula",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "labelCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "label column name",
-    "defaultValue" : "label"
+    "defaultValue" : "label",
+    "restriction" : ""
   } ]
 }

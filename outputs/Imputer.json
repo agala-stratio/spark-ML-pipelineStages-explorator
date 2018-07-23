@@ -7,24 +7,28 @@
     "paramType" : "StringArrayParam",
     "paramCategory" : "input",
     "description" : "input column names",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "missingValue",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "The placeholder for the missing values. All occurrences of missingValue will be imputed",
-    "defaultValue" : "NaN"
+    "defaultValue" : "NaN",
+    "restriction" : ""
   }, {
     "name" : "outputCols",
     "paramType" : "StringArrayParam",
     "paramCategory" : "parameter",
     "description" : "output column names",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "strategy",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "strategy for imputation. If mean, then replace missing values using the mean value of the feature. If median, then replace missing values using the median value of the feature.",
-    "defaultValue" : "mean"
+    "defaultValue" : "mean",
+    "restriction" : "in [mean,median]"
   } ]
 }

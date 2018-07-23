@@ -7,24 +7,28 @@
     "paramType" : "IntArrayParam",
     "paramCategory" : "parameter",
     "description" : "An array of indices to select features from a vector column. There can be no overlap with names.",
-    "defaultValue" : "[I@2158339b"
+    "defaultValue" : "[]",
+    "restriction" : ""
   }, {
     "name" : "inputCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "names",
     "paramType" : "StringArrayParam",
     "paramCategory" : "parameter",
     "description" : "An array of feature names to select features from a vector column. There can be no overlap with indices.",
-    "defaultValue" : "[]"
+    "defaultValue" : "[]",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

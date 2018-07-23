@@ -7,102 +7,119 @@
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "alpha for implicit preference",
-    "defaultValue" : "1.0"
+    "defaultValue" : "1.0",
+    "restriction" : ">0.0"
   }, {
     "name" : "checkpointInterval",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "set checkpoint interval (>= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ""
   }, {
     "name" : "coldStartStrategy",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "strategy for dealing with unknown or new users/items at prediction time. This may be useful in cross-validation or production scenarios, for handling user/item ids the model has not seen in the training data. Supported values: nan,drop.",
-    "defaultValue" : "nan"
+    "defaultValue" : "nan",
+    "restriction" : ""
   }, {
     "name" : "finalStorageLevel",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "StorageLevel for ALS model factors.",
-    "defaultValue" : "MEMORY_AND_DISK"
+    "defaultValue" : "MEMORY_AND_DISK",
+    "restriction" : ""
   }, {
     "name" : "implicitPrefs",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "whether to use implicit preference",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "intermediateStorageLevel",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "StorageLevel for intermediate datasets. Cannot be 'NONE'.",
-    "defaultValue" : "MEMORY_AND_DISK"
+    "defaultValue" : "MEMORY_AND_DISK",
+    "restriction" : ""
   }, {
     "name" : "itemCol",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "column name for item ids. Ids must be within the integer value range.",
-    "defaultValue" : "item"
+    "defaultValue" : "item",
+    "restriction" : ""
   }, {
     "name" : "maxIter",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "maximum number of iterations (>= 0)",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ">0.0"
   }, {
     "name" : "nonnegative",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "whether to use nonnegative constraint for least squares",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "numItemBlocks",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "number of item blocks",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ">1.0"
   }, {
     "name" : "numUserBlocks",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "number of user blocks",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ">1.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   }, {
     "name" : "rank",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "rank of the factorization",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ">1.0"
   }, {
     "name" : "ratingCol",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "column name for ratings",
-    "defaultValue" : "rating"
+    "defaultValue" : "rating",
+    "restriction" : ""
   }, {
     "name" : "regParam",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "regularization parameter (>= 0)",
-    "defaultValue" : "0.1"
+    "defaultValue" : "0.1",
+    "restriction" : ">0.0"
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "1994790107"
+    "defaultValue" : "1994790107",
+    "restriction" : ""
   }, {
     "name" : "userCol",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "column name for user ids. Ids must be within the integer value range.",
-    "defaultValue" : "user"
+    "defaultValue" : "user",
+    "restriction" : ""
   } ]
 }

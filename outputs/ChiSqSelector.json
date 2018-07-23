@@ -7,54 +7,63 @@
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "The upper bound of the expected false discovery rate.",
-    "defaultValue" : "0.05"
+    "defaultValue" : "0.05",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "featuresCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "fpr",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "The highest p-value for features to be kept.",
-    "defaultValue" : "0.05"
+    "defaultValue" : "0.05",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "fwe",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "The upper bound of the expected family-wise error rate.",
-    "defaultValue" : "0.05"
+    "defaultValue" : "0.05",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "labelCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "label column name",
-    "defaultValue" : "label"
+    "defaultValue" : "label",
+    "restriction" : ""
   }, {
     "name" : "numTopFeatures",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Number of features that selector will select, ordered by ascending p-value. If the number of features is < numTopFeatures, then this will select all features.",
-    "defaultValue" : "50"
+    "defaultValue" : "50",
+    "restriction" : ">1.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "percentile",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Percentile of features that selector will select, ordered by ascending p-value.",
-    "defaultValue" : "0.1"
+    "defaultValue" : "0.1",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "selectorType",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "The selector type of the ChisqSelector. Supported options: numTopFeatures, percentile, fpr, fdr, fwe",
-    "defaultValue" : "numTopFeatures"
+    "defaultValue" : "numTopFeatures",
+    "restriction" : "in [numTopFeatures,percentile,fpr,fdr,fwe]"
   } ]
 }

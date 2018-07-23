@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "k",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "the number of principal components (> 0)",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ">0.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

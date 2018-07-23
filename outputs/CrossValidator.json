@@ -7,30 +7,35 @@
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "estimator for selection",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "estimatorParamMaps",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "param maps for the estimator",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "evaluator",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "evaluator used to select hyper-parameters that maximize the validated metric",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "numFolds",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "number of folds for cross validation (>= 2)",
-    "defaultValue" : "3"
+    "defaultValue" : "3",
+    "restriction" : ">2.0"
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "-1191137437"
+    "defaultValue" : "-1191137437",
+    "restriction" : ""
   } ]
 }

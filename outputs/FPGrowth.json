@@ -7,30 +7,35 @@
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "items column name",
-    "defaultValue" : "items"
+    "defaultValue" : "items",
+    "restriction" : ""
   }, {
     "name" : "minConfidence",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "minimal confidence for generating Association Rule",
-    "defaultValue" : "0.8"
+    "defaultValue" : "0.8",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "minSupport",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "the minimal support level of a frequent pattern",
-    "defaultValue" : "0.3"
+    "defaultValue" : "0.3",
+    "restriction" : ">=0.0 && <=1.0"
   }, {
     "name" : "numPartitions",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Number of partitions used by parallel FP-growth",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ">1.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   } ]
 }

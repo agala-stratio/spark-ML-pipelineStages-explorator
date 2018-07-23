@@ -7,114 +7,133 @@
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "If false, the algorithm will pass trees to executors to match instances with nodes. If true, the algorithm will cache node IDs for each instance. Caching can speed up training of deeper trees.",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "checkpointInterval",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "set checkpoint interval (>= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ""
   }, {
     "name" : "featuresCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "impurity",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "Criterion used for information gain calculation (case-insensitive). Supported options: entropy, gini",
-    "defaultValue" : "gini"
+    "defaultValue" : "gini",
+    "restriction" : ""
   }, {
     "name" : "labelCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "label column name",
-    "defaultValue" : "label"
+    "defaultValue" : "label",
+    "restriction" : ""
   }, {
     "name" : "lossType",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "Loss function which GBT tries to minimize (case-insensitive). Supported options: logistic",
-    "defaultValue" : "logistic"
+    "defaultValue" : "logistic",
+    "restriction" : ""
   }, {
     "name" : "maxBins",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Max number of bins for discretizing continuous features.  Must be >=2 and >= number of categories for any categorical feature.",
-    "defaultValue" : "32"
+    "defaultValue" : "32",
+    "restriction" : ">2.0"
   }, {
     "name" : "maxDepth",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Maximum depth of the tree. (>= 0) E.g., depth 0 means 1 leaf node; depth 1 means 1 internal node + 2 leaf nodes.",
-    "defaultValue" : "5"
+    "defaultValue" : "5",
+    "restriction" : ">0.0"
   }, {
     "name" : "maxIter",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "maximum number of iterations (>= 0)",
-    "defaultValue" : "20"
+    "defaultValue" : "20",
+    "restriction" : ">0.0"
   }, {
     "name" : "maxMemoryInMB",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Maximum memory in MB allocated to histogram aggregation.",
-    "defaultValue" : "256"
+    "defaultValue" : "256",
+    "restriction" : ">0.0"
   }, {
     "name" : "minInfoGain",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Minimum information gain for a split to be considered at a tree node.",
-    "defaultValue" : "0.0"
+    "defaultValue" : "0.0",
+    "restriction" : ">0.0"
   }, {
     "name" : "minInstancesPerNode",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "Minimum number of instances each child must have after split.  If a split causes the left or right child to have fewer than minInstancesPerNode, the split will be discarded as invalid. Should be >= 1.",
-    "defaultValue" : "1"
+    "defaultValue" : "1",
+    "restriction" : ">1.0"
   }, {
     "name" : "predictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "prediction column name",
-    "defaultValue" : "prediction"
+    "defaultValue" : "prediction",
+    "restriction" : ""
   }, {
     "name" : "probabilityCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "Column name for predicted class conditional probabilities. Note: Not all models output well-calibrated probability estimates! These probabilities should be treated as confidences, not precise probabilities",
-    "defaultValue" : "probability"
+    "defaultValue" : "probability",
+    "restriction" : ""
   }, {
     "name" : "rawPredictionCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "raw prediction (a.k.a. confidence) column name",
-    "defaultValue" : "rawPrediction"
+    "defaultValue" : "rawPrediction",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "-1287390502"
+    "defaultValue" : "-1287390502",
+    "restriction" : ""
   }, {
     "name" : "stepSize",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Step size (a.k.a. learning rate) in interval (0, 1] for shrinking the contribution of each estimator.",
-    "defaultValue" : "0.1"
+    "defaultValue" : "0.1",
+    "restriction" : ">0.0 && <=1.0"
   }, {
     "name" : "subsamplingRate",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Fraction of the training data used for learning each decision tree, in range (0, 1].",
-    "defaultValue" : "1.0"
+    "defaultValue" : "1.0",
+    "restriction" : ">0.0 && <=1.0"
   }, {
     "name" : "thresholds",
     "paramType" : "DoubleArrayParam",
     "paramCategory" : "parameter",
     "description" : "Thresholds in multi-class classification to adjust the probability of predicting each class. Array must have length equal to the number of classes, with values > 0 excepting that at most one value may be 0. The class with largest value p/t is predicted, where p is the original probability of that class and t is the class's threshold",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

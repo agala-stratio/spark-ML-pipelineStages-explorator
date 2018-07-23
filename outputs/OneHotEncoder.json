@@ -7,18 +7,21 @@
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "whether to drop the last category",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   }, {
     "name" : "inputCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

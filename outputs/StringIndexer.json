@@ -7,18 +7,21 @@
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "how to handle invalid data (unseen labels or NULL values). Options are 'skip' (filter out rows with invalid data), error (throw an error), or 'keep' (put invalid data in a special additional bucket, at index numLabels).",
-    "defaultValue" : "error"
+    "defaultValue" : "error",
+    "restriction" : "in [skip,error,keep]"
   }, {
     "name" : "inputCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

@@ -7,84 +7,98 @@
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "set checkpoint interval (>= 1) or disable checkpoint (-1). E.g. 10 means that the cache will get checkpointed every 10 iterations",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ""
   }, {
     "name" : "docConcentration",
     "paramType" : "DoubleArrayParam",
     "paramCategory" : "parameter",
     "description" : "Concentration parameter (commonly named \"alpha\") for the prior placed on documents' distributions over topics (\"theta\").",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "featuresCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "features column name",
-    "defaultValue" : "features"
+    "defaultValue" : "features",
+    "restriction" : ""
   }, {
     "name" : "k",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "The number of topics (clusters) to infer. Must be > 1.",
-    "defaultValue" : "10"
+    "defaultValue" : "10",
+    "restriction" : ">1.0"
   }, {
     "name" : "keepLastCheckpoint",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "(For EM optimizer) If using checkpointing, this indicates whether to keep the last checkpoint. If false, then the checkpoint will be deleted. Deleting the checkpoint can cause failures if a data partition is lost, so set this bit with care.",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   }, {
     "name" : "learningDecay",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "(For online optimizer) Learning rate, set as an exponential decay rate. This should be between (0.5, 1.0] to guarantee asymptotic convergence.",
-    "defaultValue" : "0.51"
+    "defaultValue" : "0.51",
+    "restriction" : ">0.0"
   }, {
     "name" : "learningOffset",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "(For online optimizer) A (positive) learning parameter that downweights early iterations. Larger values make early iterations count less.",
-    "defaultValue" : "1024.0"
+    "defaultValue" : "1024.0",
+    "restriction" : ">0.0"
   }, {
     "name" : "maxIter",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "maximum number of iterations (>= 0)",
-    "defaultValue" : "20"
+    "defaultValue" : "20",
+    "restriction" : ">0.0"
   }, {
     "name" : "optimizeDocConcentration",
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "(For online optimizer only, currently) Indicates whether the docConcentration (Dirichlet parameter for document-topic distribution) will be optimized during training.",
-    "defaultValue" : "true"
+    "defaultValue" : "true",
+    "restriction" : ""
   }, {
     "name" : "optimizer",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "Optimizer or inference algorithm used to estimate the LDA model. Supported: online, em",
-    "defaultValue" : "online"
+    "defaultValue" : "online",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "1435876747"
+    "defaultValue" : "1435876747",
+    "restriction" : ""
   }, {
     "name" : "subsamplingRate",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "(For online optimizer) Fraction of the corpus to be sampled and used in each iteration of mini-batch gradient descent, in range (0, 1].",
-    "defaultValue" : "0.05"
+    "defaultValue" : "0.05",
+    "restriction" : ">0.0 && <=1.0"
   }, {
     "name" : "topicConcentration",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "Concentration parameter (commonly named \"beta\" or \"eta\") for the prior placed on topic' distributions over terms.",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ">0.0"
   }, {
     "name" : "topicDistributionCol",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "Output column with estimates of the topic mixture distribution for each document (often called \"theta\" in the literature).  Returns a vector of zeros for an empty document.",
-    "defaultValue" : "topicDistribution"
+    "defaultValue" : "topicDistribution",
+    "restriction" : ""
   } ]
 }

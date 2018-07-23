@@ -7,24 +7,28 @@
     "paramType" : "BooleanParam",
     "paramCategory" : "parameter",
     "description" : "If true, all non zero counts are set to 1. This is useful for discrete probabilistic models that model binary events rather than integer counts",
-    "defaultValue" : "false"
+    "defaultValue" : "false",
+    "restriction" : ""
   }, {
     "name" : "inputCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "numFeatures",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "number of features (> 0)",
-    "defaultValue" : "262144"
+    "defaultValue" : "262144",
+    "restriction" : ">0.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   } ]
 }

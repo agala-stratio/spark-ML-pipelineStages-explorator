@@ -7,30 +7,35 @@
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "the length of each hash bucket, a larger bucket lowers the false negative rate.",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ">0.0"
   }, {
     "name" : "inputCol",
     "paramType" : "Param",
     "paramCategory" : "input",
     "description" : "input column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "numHashTables",
     "paramType" : "IntParam",
     "paramCategory" : "parameter",
     "description" : "number of hash tables, where increasing number of hash tables lowers the false negative rate, and decreasing it improves the running performance",
-    "defaultValue" : "1"
+    "defaultValue" : "1",
+    "restriction" : ">0.0"
   }, {
     "name" : "outputCol",
     "paramType" : "Param",
     "paramCategory" : "output",
     "description" : "output column name",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "772209414"
+    "defaultValue" : "772209414",
+    "restriction" : ""
   } ]
 }

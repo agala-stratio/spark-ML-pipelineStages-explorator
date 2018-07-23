@@ -7,30 +7,35 @@
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "estimator for selection",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "estimatorParamMaps",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "param maps for the estimator",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "evaluator",
     "paramType" : "Param",
     "paramCategory" : "parameter",
     "description" : "evaluator used to select hyper-parameters that maximize the validated metric",
-    "defaultValue" : ""
+    "defaultValue" : "",
+    "restriction" : ""
   }, {
     "name" : "seed",
     "paramType" : "LongParam",
     "paramCategory" : "parameter",
     "description" : "random seed",
-    "defaultValue" : "-1772833110"
+    "defaultValue" : "-1772833110",
+    "restriction" : ""
   }, {
     "name" : "trainRatio",
     "paramType" : "DoubleParam",
     "paramCategory" : "parameter",
     "description" : "ratio between training set and validation set (>= 0 && <= 1)",
-    "defaultValue" : "0.75"
+    "defaultValue" : "0.75",
+    "restriction" : ">=0.0 && <=1.0"
   } ]
 }
