@@ -6,7 +6,7 @@
     "name" : "family",
     "paramType" : "Param",
     "paramCategory" : "parameter",
-    "description" : "The name of family which is a description of the error distribution to be used in the model. Supported options: binomial, poisson, gaussian, gamma, tweedie.",
+    "description" : "The name of family which is a description of the error distribution to be used in the model. Supported options: gamma, gaussian, poisson, binomial, tweedie.",
     "defaultValue" : "gaussian",
     "restriction" : ""
   }, {

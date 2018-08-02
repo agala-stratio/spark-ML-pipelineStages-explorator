@@ -1,0 +1,27 @@
+{
+  "name" : "MulticlassClassificationEvaluator",
+  "className" : "org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator",
+  "stageType" : "evaluation",
+  "parameters" : [ {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label",
+    "restriction" : ""
+  }, {
+    "name" : "metricName",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "metric name in evaluation (f1|weightedPrecision|weightedRecall|accuracy)",
+    "defaultValue" : "f1",
+    "restriction" : "in [f1,weightedPrecision,weightedRecall,accuracy]"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction",
+    "restriction" : ""
+  } ]
+}

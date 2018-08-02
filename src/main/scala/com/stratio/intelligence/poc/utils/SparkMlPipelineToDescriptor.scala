@@ -2,11 +2,10 @@ package com.stratio.intelligence.poc.utils
 
 import java.io.InputStream
 
-import com.stratio.intelligence.poc.SparkMlPipelineStagesDescriptors.pipelineStagesDescriptors
 import org.apache.spark.ml.classification.LogisticRegression
 import org.apache.spark.ml.feature._
-import org.apache.spark.ml.{Pipeline, PipelineStage}
 import org.apache.spark.ml.param._
+import org.apache.spark.ml.{Pipeline, PipelineStage}
 import org.json4s.DefaultFormats
 import org.json4s.jackson.Serialization.{read, writePretty}
 

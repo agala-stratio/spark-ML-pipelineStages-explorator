@@ -31,6 +31,8 @@ object SparkMlPipelineStagesDescriptors extends App {
   val estimatorsClasses: Seq[ClassInfo] = ClassFinder.concreteSubclasses(
     "org.apache.spark.ml.Estimator", classes
   ).toList.filter(_.toString() != "org.apache.spark.ml.Pipeline")
+  val estimatorsInstances: Seq[Any] = estimatorsClasses.map(c => Class.forName(c.toString()).newInstance)
+
 
   // => Getting all Transformer subclasses -> Only transformers that not have an estimator associated
   val transformersClasses = ClassFinder.concreteSubclasses(
@@ -39,11 +41,15 @@ object SparkMlPipelineStagesDescriptors extends App {
   val transformerWithoutEstimatorInstances = transformersClasses.map(
     c => Try(Class.forName(c.toString()).newInstance)).collect { case Success(x) => x }
 
-  // => Getting instances of all Pipeline subclasses
-  val estimatorsInstances: Seq[Any] = estimatorsClasses.map(c => Class.forName(c.toString()).newInstance)
+  // => Getting all evaluator subclasses
+  val evaluatorClasses: Seq[ClassInfo] = ClassFinder.concreteSubclasses(
+    "org.apache.spark.ml.evaluation.Evaluator", classes
+  ).toList
+  val evaluatorInstances = evaluatorClasses.map(c => Class.forName(c.toString()).newInstance)
+
 
   // => All possible pipelineStages to include in front
-  val pipelineStagesInstances = transformerWithoutEstimatorInstances ++ estimatorsInstances
+  val pipelineStagesInstances = transformerWithoutEstimatorInstances ++ estimatorsInstances ++ evaluatorInstances
 
   // => Explain params
   pipelineStagesInstances.foreach(e =>
@@ -80,12 +86,16 @@ object SparkMlPipelineStagesDescriptors extends App {
 
   implicit val formats = DefaultFormats
 
-  val pipelineStagesDescriptorsJson = pipelineStagesDescriptors.map(d => (d.name, writePretty(d)))
+  val pipelineStagesDescriptorsJson = pipelineStagesDescriptors.map(d => (d.name, writePretty(d), d.stageType))
 
 
   // Saving jsons
   pipelineStagesDescriptorsJson.foreach(
-    x => scala.tools.nsc.io.File(s"outputs/${x._1}.json").writeAll(x._2))
+    x => {
+      scala.tools.nsc.io.File(s"outputs/${x._3}").createDirectory(failIfExists = false)
+      scala.tools.nsc.io.File(s"outputs/${x._3}/${x._1}.json").writeAll(x._2)
+    }
+  )
 
 
   def getDefaultValue(e: Any, p: Param[_]): String = {
