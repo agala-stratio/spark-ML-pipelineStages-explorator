@@ -9,6 +9,7 @@ import org.json4s.jackson.Serialization
 import org.json4s.jackson.Serialization.read
 
 import scala.io.Source
+import scala.util.{Failure, Try}
 
 
 // => Pipeline stages descriptors classes
@@ -53,10 +54,16 @@ object SparkMlDeserializePipeline extends App {
 
   implicit val formats = DefaultFormats
 
-  val readedJson = Source.fromFile("examples/nlp_pipeline_example.json").getLines.mkString
-  val pipelineDescriptor = read[PipelineDescriptor](readedJson)
+  // val readedJson = Source.fromFile("examples/nlp_pipeline_example.json").getLines.mkString
 
-  val deserializedPipeline: Pipeline = getPipelineFromDescriptor(pipelineDescriptor)
+  val readedJson = Source.fromFile("examples/nlp_pipeline_example.json").getLines.mkString
+  val pipelineDescriptor: Try[PipelineDescriptor] = Try(read[PipelineDescriptor](readedJson))
+
+  pipelineDescriptor match {
+    case Failure(e) => {println(e); System.exit(1)}
+    case _ => None
+  }
+  val deserializedPipeline: Pipeline = getPipelineFromDescriptor(pipelineDescriptor.get)
 
 
   val spark = SparkSession.builder.appName("Simple Application").master("local").getOrCreate()
@@ -83,6 +90,8 @@ object SparkMlDeserializePipeline extends App {
       val stage = Class.forName(stageDescriptor.className).newInstance
       stageDescriptor.parameters.foreach( paramDescriptor => {
         val paramToSet = stage.asInstanceOf[Params].getParam(paramDescriptor.name)
+
+
         stage.asInstanceOf[Params].set(paramToSet, getParamType(paramDescriptor.paramType, paramDescriptor.value))
       })
       stage.asInstanceOf[PipelineStage]
@@ -100,3 +109,5 @@ object SparkMlDeserializePipeline extends App {
   }
 
 }
+
+
