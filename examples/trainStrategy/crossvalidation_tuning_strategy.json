@@ -1,0 +1,16 @@
+{
+  "strategy": "tuningHyperParams",
+  "validationMode" : "crossValidation",
+  "numFolds": 10,
+  "seed": 11,
+  "paramGrid" : {
+    "aa": "b",
+    "bb": "cc"
+  },
+  "testEvaluator": {
+    "metricType": "regression",
+    "metricName": "rms",
+    "labelCol": "label",
+    "predictionCol": "prediction"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "strategy": "tuningHyperParams",
+  "validationMode" : "trainValidationSplit",
+  "trainRatio": 0.25,
+  "seed": 11,
+  "paramGrid" : {
+    "aa": "b",
+    "bb": "cc"
+  },
+  "testEvaluator": {
+    "metricType": "regression",
+    "metricName": "rms",
+    "labelCol": "label",
+    "predictionCol": "prediction"
+  }
+}

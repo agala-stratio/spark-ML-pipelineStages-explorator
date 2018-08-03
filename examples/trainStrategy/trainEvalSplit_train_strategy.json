@@ -1,0 +1,17 @@
+{
+  "strategy": "trainAndEval",
+  "seed": 11,
+  "trainRatio": 0.21,
+  "evaluators": [{
+    "metricType": "regression",
+    "metricName": "rms",
+    "labelCol": "label",
+    "predictionCol": "prediction"
+  },{
+    "metricType": "regression",
+    "metricName": "rms",
+    "labelCol": "label",
+    "predictionCol": "prediction"
+  }]
+}
+
