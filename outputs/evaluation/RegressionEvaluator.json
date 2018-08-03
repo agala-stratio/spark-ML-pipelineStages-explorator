@@ -1,0 +1,27 @@
+{
+  "name" : "RegressionEvaluator",
+  "className" : "org.apache.spark.ml.evaluation.RegressionEvaluator",
+  "stageType" : "evaluation",
+  "parameters" : [ {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label",
+    "restriction" : ""
+  }, {
+    "name" : "metricName",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "metric name in evaluation (mse|rmse|r2|mae)",
+    "defaultValue" : "rmse",
+    "restriction" : "in [mse,rmse,r2,mae]"
+  }, {
+    "name" : "predictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "prediction column name",
+    "defaultValue" : "prediction",
+    "restriction" : ""
+  } ]
+}

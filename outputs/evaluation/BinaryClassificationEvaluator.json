@@ -1,0 +1,27 @@
+{
+  "name" : "BinaryClassificationEvaluator",
+  "className" : "org.apache.spark.ml.evaluation.BinaryClassificationEvaluator",
+  "stageType" : "evaluation",
+  "parameters" : [ {
+    "name" : "labelCol",
+    "paramType" : "Param",
+    "paramCategory" : "input",
+    "description" : "label column name",
+    "defaultValue" : "label",
+    "restriction" : ""
+  }, {
+    "name" : "metricName",
+    "paramType" : "Param",
+    "paramCategory" : "parameter",
+    "description" : "metric name in evaluation (areaUnderROC|areaUnderPR)",
+    "defaultValue" : "areaUnderROC",
+    "restriction" : "in [areaUnderROC,areaUnderPR]"
+  }, {
+    "name" : "rawPredictionCol",
+    "paramType" : "Param",
+    "paramCategory" : "output",
+    "description" : "raw prediction (a.k.a. confidence) column name",
+    "defaultValue" : "rawPrediction",
+    "restriction" : ""
+  } ]
+}
