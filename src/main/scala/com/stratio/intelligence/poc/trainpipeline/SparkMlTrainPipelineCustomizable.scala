@@ -1,5 +1,7 @@
 package com.stratio.intelligence.poc.trainpipeline
 
+import java.io
+
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.ml._
 import org.apache.spark.ml.classification.{LogisticRegression, LogisticRegressionModel}
@@ -9,7 +11,7 @@ import org.apache.spark.ml.param._
 import org.apache.spark.ml.tuning._
 import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types.DoubleType
-import org.apache.spark.sql.{Column, DataFrame, SparkSession}
+import org.apache.spark.sql._
 import org.json4s.DefaultFormats
 import org.json4s.jackson.Serialization.writePretty
 
@@ -28,7 +30,7 @@ object SparkMlTrainPipelineCustomizable extends App {
   //      Five Gaussian r.v [data_1,..,data_5] --> data_4 and data_5 uninformative
   val inputDf = getBinaryClassDf(
     10000, // Number of samples
-    Array((1, 1), (1, 1), (1, 1), (1, 1), (1, 1)), // Array[(std_H0, std_H1)]
+    Array((1, 1), (1, 1), (1, 1), (1, 1), (1, 1)),          // Array[(std_H0, std_H1)]
     Array((0, 0.5), (0, 0.5), (0, 0.5), (0, 0), (0.5, 0.5)) // Array[(mu_H0, std_H1)]
   )
   inputDf.show()
@@ -40,17 +42,15 @@ object SparkMlTrainPipelineCustomizable extends App {
   val idStageMapper: Map[String, PipelineStage] = pipeline.getStages.map(s => (s.uid, s)).toMap
 
 
-  // · Split input data
-  val trainDf = inputDf
-
-
   // => Train all
   val trainAllStrategy = TrainProperties()
 
   // => Train and eval
 
   // => Hyper-parameter tuning - CrossValidation
+  // --------------------------------------------------------------
   val cvHyperParamTuningStrategy = TrainProperties(
+    // - Hyper-parameter tuning options
     enableHyperparameterTuning = true,
     labelCol = Option("label"),
     predictionCol = Option("rawPrediction"),
@@ -60,8 +60,41 @@ object SparkMlTrainPipelineCustomizable extends App {
     paramGrid = Option(
       Map("lg.fitIntercept" -> "",
           "lg.regParam" -> "0, 0.00001, 0.0001, 0.001, 0.01, 1")
-    )
+    ),
+    // - Evaluation options
+    enableEvaluation = true,
+    trainEvalRatio = Option(0.7),
+    evaluatorType = Option("BinaryClassificationEvaluator"),
+    metrics = Option(Array("areaUnderROC","areaUnderPR"))
   )
+
+  // · Split input data into train-evaluation
+  val dataAndEvaluation: (DataFrame, Option[(DataFrame, Array[(String, Evaluator)])]) =
+    if(cvHyperParamTuningStrategy.enableEvaluation){
+      val evalEvaluators:Array[(String, Evaluator)] =
+        cvHyperParamTuningStrategy.metrics.get.map( metric => {
+          (metric, getEvaluator(
+            cvHyperParamTuningStrategy.labelCol.get,
+            cvHyperParamTuningStrategy.predictionCol.get,
+            cvHyperParamTuningStrategy.evaluatorType.get,
+            metric
+          ))
+        }
+      )
+      val trainEvalRatio = cvHyperParamTuningStrategy.trainEvalRatio.get
+      val Array(trainingDf, evaluationDf) =
+        if(cvHyperParamTuningStrategy.trainEvalSplitSeed.isDefined){
+          val seed = cvHyperParamTuningStrategy.trainEvalSplitSeed.get
+          inputDf.randomSplit(Array(trainEvalRatio, 1 - trainEvalRatio),seed)
+        }else {
+          inputDf.randomSplit(Array(trainEvalRatio, 1 - trainEvalRatio),123456)
+        }
+      (trainingDf, Option((evaluationDf, evalEvaluators)))
+    }else{
+      (inputDf, None)
+    }
+
+  val trainDf: DataFrame = dataAndEvaluation._1
 
   // · Building grid
   val grid: Array[ParamMap] = paramGridBuilder(
@@ -95,6 +128,19 @@ object SparkMlTrainPipelineCustomizable extends App {
     x => s"${x.asInstanceOf[PipelineStage].uid}" +
       Try(s"\n${x.asInstanceOf[LogisticRegressionModel].summary.toString}").getOrElse("")
   ).mkString("\n\n"))
+
+  // => Evaluation
+  if(dataAndEvaluation._2.isDefined){
+    val evalDf = dataAndEvaluation._2.get._1
+    val transformedEvalDf = bestModel.transform(evalDf)
+    evalDf.cache()
+    val metricsAndEvaluators: Array[(String, Evaluator)] = dataAndEvaluation._2.get._2
+    val evaluation: Map[String, Double] = metricsAndEvaluators.map{ case (metricName, evaluator) => {
+      (metricName, evaluator.evaluate(transformedEvalDf))
+    }}.toMap
+    evalDf.unpersist()
+    println(evaluation)
+  }
 
 
 
