@@ -29,10 +29,10 @@ object SparkMlTrainPipelineEndToEnd extends App {
   val inputDf = getBinaryClassDf(
     10000, // Number of samples
     Array((1, 1), (1, 1), (1, 1), (1, 1), (1, 1)), // Array[(std_H0, std_H1)]
-    Array((0, 0.5), (0, 0.5), (0, 0.5), (0, 0), (0.5, 0.5))  // Array[(mu_H0, std_H1)]
+    Array((0, 0.5), (0, 0.5), (0, 0.5), (0, 0), (0.5, 0.5)) // Array[(mu_H0, std_H1)]
   )
   inputDf.show()
-  val featuresColNames: Array[String] = inputDf.columns.filter(_ != "label" )
+  val featuresColNames: Array[String] = inputDf.columns.filter(_ != "label")
 
   // => Pipeline
   val pipeline = getPipeline(featuresColNames)
@@ -57,10 +57,10 @@ object SparkMlTrainPipelineEndToEnd extends App {
 
   val gridParamMap = grid
     // - with or without intercept term
-    .addGrid( pipeline.getStages(1).getParam("fitIntercept").asInstanceOf[BooleanParam])
+    .addGrid(pipeline.getStages(1).getParam("fitIntercept").asInstanceOf[BooleanParam])
     // - L1-regularization parameter
-    .addGrid( pipeline.getStages(1).getParam("regParam").asInstanceOf[DoubleParam],
-              Array(0, 0.00001, 0.0001, 0.001, 0.01, 1) )
+    .addGrid(pipeline.getStages(1).getParam("regParam").asInstanceOf[DoubleParam],
+    Array(0, 0.00001, 0.0001, 0.001, 0.01, 1))
     .build()
 
   crossValidation
@@ -84,7 +84,7 @@ object SparkMlTrainPipelineEndToEnd extends App {
   println(tuningSummaryJson)
 
   println(bestModel.stages.map(
-    x => s"${x.asInstanceOf[PipelineStage].uid}"+
+    x => s"${x.asInstanceOf[PipelineStage].uid}" +
       Try(s"\n${x.asInstanceOf[LogisticRegressionModel].summary.toString}").getOrElse("")
   ).mkString("\n\n"))
 
@@ -120,7 +120,7 @@ object SparkMlTrainPipelineEndToEnd extends App {
   }
 
   /**
-    * L1-regularized Binary Logistic Regression
+    * L1-regularized Logistic Regression for Binary Classification
     */
   def getPipeline(features: Array[String]): Pipeline = {
     new Pipeline().setStages(
@@ -134,5 +134,5 @@ object SparkMlTrainPipelineEndToEnd extends App {
           .setElasticNetParam(1) // For alpha = 1, it is an L1 penalty.
       ))
   }
-}
 
+}
